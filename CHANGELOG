@@ -1,0 +1,38 @@
+--------------------------------------
+* PHP MSSQL Query Analyzer changelog *
+--------------------------------------
+- alpha-0.31
+2009 apr 09 - now empty strings are not appended to file php-query-analyzer-tables-used-in-selects
+2009 apr 09 - no error when query did not return rows, on inserts or updates for example
+
+- alpha-0.32
+2009 jun 15 - connected host display now available
+2009 jun 15 - likely hello message
+2009 jun 15 - empty or null rows list error fixed
+
+- alpha-0.33
+2009 sep 23 - some data doesn't appear some cases repeated fields
+
+- alpha-0.40
+2009 sep - opensource layout search, layout rebuild
+2009 oct - code complete rewrite
+2009 oct - db configuration page
+2009 oct - author and contact page 
+2009 oct 14 - background query and return
+
+- alpha-0.41
+2009 oct 15 - wrong ajax message state fixed
+2009 oct 15 - specialchars exchange using htmlentities
+2009 oct 16 - slashes error some type os queries fixed
+
+- alpha-0.42
+2010 may 25 - added box "last queries" below textarea (need some fixes some special chars do brake the code, button to show/hidden);
+2010 may 28 - better visualization on message "user on dbname @ host" to avoid mistakes;
+2010 may 28 - "clear" button to last queries
+2010 jun 10 - include ORDER condition on columns (need fixes to delete ORDER condition when query already have one)
+2010 jun 10 - Mozilla Firefox Community Member button
+2010 jun 10 - Some plastic changes
+
+- alpha-0.43
+2010 jun 11 - fixed bug on tag </a> at file common.leftmenu.php line 38 (Thank you Hélio - helio@traxxtecnologia.com.br)
+--------------------------------------

@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------------
+* Last Modified: 2009 Oct 06
+--------------------------------------------------------------------------------
+*** Install instructions ***
+
+- Copy all files to a folder on a webserver that supports PHP and have route to 
+SQL Server host;
+
+- Write permission to files:
+   - db.vars.php
+   - php-query-analyzer-tables-used-in-selects
+   - php-query-analyzer-tempfile-for-csv-export
+
+- Openup index.php on a browser, and edit db vars on configuration link on top menu.
+
+Any problems please feel free to send me a mail... miguel.axcar@gmail.com
+
+Brazilian regards, Luiz "Miguel" Axcar
+--------------------------------------------------------------------------------
