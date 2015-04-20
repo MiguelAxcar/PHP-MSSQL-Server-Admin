@@ -1,0 +1,2 @@
+# PHP-MSSQL-Server-Admin
+PHP MSSQL Server Admin or PHP Query Analyzer is a tool where you can admin a MSSQL Server with PHP, like PHPMyAdmin for MySQL but so much simpler. Written in PHP by Luiz Miguel Axcar to build and run queries on a remote or local MSSQL (Microsoft SQL Server). Support for SQL code highlight (!), table browser, field browser, TOP records, most used tables, CSV results export, etc. Most tested in SQL 2000 version. If you find some issue ther let me know and I help you fixing it.
