@@ -2,7 +2,7 @@
 
 if (!empty($db_hostname) && !empty($port) && !empty($db_name) && !empty($username) && !empty($password))
 {
-	if ( ! ( $_CONEXAO = @mssql_connect ("$db_hostname,$port", $username, $password) ) )
+	if ( ! ( $_CONEXAO = @mssql_connect ("$db_hostname", $username, $password) ) )
 	{
 		echo "<blockquote style='color: red; border-left: solid 0.75em #FF0000;'>";
 		echo "There is an error on database connection, please check your data:[$username:".str_repeat("*", strlen($password))."->$db_name@$db_hostname:$port].";
