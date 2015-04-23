@@ -5,16 +5,16 @@
 	<meta name="description" content="CodePress - source code editor window" />
 
 	<script type="text/javascript">
-	var language = 'generic';
-	var engine = 'older';
-	var ua = navigator.userAgent;
-	var ts = (new Date).getTime(); // timestamp to avoid cache
-	var lh = location.href;
-	
-	if(ua.match('MSIE')) engine = 'msie';
-	else if(ua.match('KHTML')) engine = 'khtml'; 
-	else if(ua.match('Opera')) engine = 'opera'; 
+    var language = 'generic',
+	    engine = 'older',
+	    ua = navigator.userAgent,
+	    ts = (new Date()).getTime(), // timestamp to avoid cache
+	    lh = location.href;
+
+	if (ua.match('MSIE')) engine = 'msie';
 	else if(ua.match('Gecko')) engine = 'gecko';
+    else if(ua.match('KHTML')) engine = 'khtml';
+    else if(ua.match('Opera')) engine = 'opera';
 
 	if(lh.match('language=')) language = lh.replace(/.*language=(.*?)(&.*)?$/,'$1');
 
