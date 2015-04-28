@@ -128,7 +128,6 @@ function clear_last_queries()
 	<div id="primaryContent">
 
 	<?php
-	var_dump($_POST);
 	$query = (! empty ($_GET['query'])) ? stripslashes($_GET['query']) : stripslashes($_POST['auxiliar']);
 
 	echo "<br><br><div id='superqueries'><h3>Last queries (<span id='contadorLastQueries'>0</span>) - <span onclick='clear_last_queries()' style='cursor: pointer; text-decoration: underline;'>clear</span></h3></div>";
