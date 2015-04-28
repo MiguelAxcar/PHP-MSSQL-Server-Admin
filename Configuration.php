@@ -1,4 +1,6 @@
 <?php
+	ini_set('display_errors', 1);
+
 	include ('common.header.php');
 	include ('common.topmenu.php');	
 	include ('common.library.php');	
@@ -22,15 +24,55 @@
 	echo "<div id='content'>";
 
 	if (! is_writable('db.vars.php')) {
-		echo "<div id='primaryContentContainer'>
-				<div id='primaryContent'>
-				<p>
-					<blockquote style='color: red; border-left: solid 0.75em #FF0000;'>
-						The files <b>db.vars.php</b> and <b>php-query-analyzer-t*</b> need to be writable.<br>
-						<br/>
-						<b>Try:</b><br/>
-						$ chmod 666 db.vars.php php-query-analyzer-t*
-					</blockquote>";
+		echo "
+		<div id='primaryContentContainer' style='float:left; padding:20px;'>
+		<div id='primaryContent'>
+		<p>
+			<h3>Need to change some file permissions</h3>
+			<blockquote style='color: red; border-left: solid 0.75em #FF0000;'>		
+				The files <b>db.vars.php</b> and <b>php-query-analyzer-t*</b> need to be writable.<br>
+				<br/>
+				<b>Try:</b><br/>
+				$ chmod 666 db.vars.php php-query-analyzer-t*			
+			</blockquote>
+		</p>
+		</div>
+		</div>
+		
+		<div class='clear'></div></div>";
+	
+		include ('common.footer.php');
+	
+		echo "</div>";	
+		echo "</body></html>";
+		
+		exit();		
+
+	} elseif (! function_exists('mssql_connect')) {
+
+				echo "
+		<div id='primaryContentContainer' style='float:left; padding:20px;'>
+		<div id='primaryContent'>
+		<p>
+			<h3>Some drivers needed</h3>
+			<blockquote style='color: red; border-left: solid 0.75em #FF0000;'>		
+				Your machine doesn't support to connect to MSSQL Servers.<br>
+				Please take a look on this article <a href='https://davejamesmiller.com/blog/connecting-php-to-microsoft-sql-server-on-linux'>Connecting PHP to Microsoft SQL Server on Linux</a>.
+			</blockquote>
+		</p>
+		</div>
+		</div>
+		
+		<div class='clear'></div></div>";
+	
+		include ('common.footer.php');
+	
+		echo "</div>";	
+		echo "</body></html>";
+		
+		exit();		
+
+
 	} else {
 		echo "
 		<div id='secondaryContent'>
@@ -44,24 +86,28 @@
 			<li>Password<br><input type='password' name='password' value='$password'></li><br>";
 			
 			echo "<li>DB name<br>";
+
+
 			
-			$_CONEXAO = @mssql_connect ("$db_hostname,$port", $username, $password);
-			@mssql_select_db ($db_name, $_CONEXAO);
-			
-			if ($_CONEXAO)
-			{
-				echo "<select name='db_name'>";
-		
-				$query = "sp_databases";
-				$resultado = mssql_query($query, $_CONEXAO);
-				while ($campo = mssql_fetch_array ($resultado, MSSQL_ASSOC))
-				{
-					$banco = $campo['DATABASE_NAME'];
+			if ($db_hostname && $username && $db_name) {
+				$_CONEXAO = mssql_connect ("$db_hostname", $username, $password);
+				mssql_select_db ($db_name, $_CONEXAO);
 				
-					echo "<option value='$banco'".((strtolower($banco) == strtolower($db_name)) ? "selected" : "").">$banco</option>";
-				}
+				if ($_CONEXAO)
+				{
+					echo "<select name='db_name'>";
 			
-				echo "</select>";
+					$query = "sp_databases";
+					$resultado = mssql_query($query, $_CONEXAO);
+					while ($campo = mssql_fetch_array ($resultado, MSSQL_ASSOC))
+					{
+						$banco = $campo['DATABASE_NAME'];
+					
+						echo "<option value='$banco'".((strtolower($banco) == strtolower($db_name)) ? "selected" : "").">$banco</option>";
+					}
+				
+					echo "</select>";
+				}
 			}
 			else
 			{
