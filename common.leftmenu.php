@@ -20,7 +20,7 @@
 		foreach ($matrox as $chave => $valor)
 		{
 			$nome_tabela = trim($chave);
-			echo "<li><a onclick='textareaQuery.setCode(\"SELECT TOP 10 * FROM $nome_tabela\"); carrega(\"SELECT TOP 10 * FROM $nome_tabela\")'><acronym title='$nome_tabela'>$nome_tabela</acronym></a></li>";
+			echo "<li><a onclick='setCode(\"SELECT TOP 10 * FROM $nome_tabela\"); carrega(\"SELECT TOP 10 * FROM $nome_tabela\")'><acronym title='$nome_tabela'>$nome_tabela</acronym></a></li>";
 		}
 		echo "</ul><br>";
 	}
@@ -37,7 +37,7 @@
 	while($campo = mssql_fetch_array($resultado))
 	{
 		$nome_tabela = $campo['TABLE_NAME'];
-		echo "<li><a onclick='textareaQuery.setCode(\"SELECT TOP 10 * FROM $nome_tabela\"); carrega(\"SELECT TOP 10 * FROM $nome_tabela\")'><acronym title='$nome_tabela' class='name'>$nome_tabela</acronym></a></li>";
+		echo "<li><a onclick='setCode(\"SELECT TOP 10 * FROM $nome_tabela\"); carrega(\"SELECT TOP 10 * FROM $nome_tabela\")'><acronym title='$nome_tabela' class='name'>$nome_tabela</acronym></a></li>";
 	}
 	echo "</ul>";
 	echo "</div>";

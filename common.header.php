@@ -2,7 +2,15 @@
 
 <!-- Syntax highlighting editor kindly provided by Fernando M.A.d.S. <fermads@gmail.com>
 Take a look on codepress website project at https://sourceforge.net/projects/codepress -->
-<script src="codepress/codepress.js" type="text/javascript"></script> 
+<!-- <script src="codepress/codepress.js" type="text/javascript"></script>  -->
+
+<link rel="stylesheet" href="codemirror/lib/codemirror.css" />
+<script src="codemirror/lib/codemirror.js" type="text/javascript"></script>
+<script src="codemirror/mode/sql/sql.js" type="text/javascript"></script>
+<link rel="stylesheet" href="codemirror/theme/eclipse.css" />
+<link rel="stylesheet" href="codemirror/addon/hint/show-hint.css" />
+<script src="codemirror/addon/hint/show-hint.js"></script>
+<script src="codemirror/addon/hint/sql-hint.js"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="http://listjs.com/no-cdn/list.js"></script>

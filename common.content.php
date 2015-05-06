@@ -99,7 +99,7 @@ function carrega(query)
 					var segundos = (hoje.getSeconds() <=9) ? 0 + hoje.getSeconds() : hoje.getSeconds();
 					var data = hoje.getDate() + "/" + meses[hoje.getMonth()] + " "+hoje.getHours() + ":" + minutos + ":" + segundos;
 				
-					document.getElementById('superqueries').innerHTML += "<a onclick='textareaQuery.setCode(\""+addslashes(query)+"\")'>("+data+"): "+query+"</a><br>";
+					document.getElementById('superqueries').innerHTML += "<a onclick='setCode(\""+addslashes(query)+"\")'>("+data+"): "+query+"</a><br>";
 					document.getElementById('retorno_busca_ajax').innerHTML += '<br><hr>' + ajax.responseText;
 				}	
 				ajax = null;
@@ -133,13 +133,12 @@ function clear_last_queries()
 	echo "<br><br><div id='superqueries'><h3>Last queries (<span id='contadorLastQueries'>0</span>) - <span onclick='clear_last_queries()' style='cursor: pointer; text-decoration: underline;'>clear</span></h3></div>";
 
 	echo "<br>
-	 <textarea name='query_textarea' id='textareaQuery' class='codepress sql' onkeyup='szs(this);' wrap='false'>{$query}</textarea>
- 
+	 <textarea name='query_textarea' id='textareaQuery' onkeyup='szs(this);' wrap='false'>{$query}</textarea>
 	 <br><br>
 	 
 	<div align='center' valign='middle' style='background-color: #EEE; width: 93%px; height: 24px; border-left: 10px solid #CCC; border-right: 10px solid #CCC; '>
 
-	<input type='button' value='Shoot!' default onclick='carrega(textareaQuery.getCode())'>
+	<input type='button' value='Shoot!' default onclick='carrega(getCode())'>
 	</div>";
 
 	echo "	<br>

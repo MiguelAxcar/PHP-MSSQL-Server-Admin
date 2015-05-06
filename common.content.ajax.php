@@ -56,7 +56,7 @@ if (! empty ($query))
 					{
 						$matrix_chaves[] = $chave;
 						$string_csv .= "$chave;";
-						$string_tela .=  "<th><acronym title='Click to add ORDER BY $chave to the query...'><span style='cursor: pointer; text-decoration: underline;' onclick='textareaQuery.setCode(textareaQuery.getCode() + \" ORDER BY $chave\")'>$chave</span></acronym></th>";
+						$string_tela .=  "<th><acronym title='Click to add ORDER BY $chave to the query...'><span style='cursor: pointer; text-decoration: underline;' onclick='setCode($(\"#textareaQuery\").val() + \" ORDER BY $chave\")'>$chave</span></acronym></th>";
 					}
 					$string_tela .=  "</tr>";
 					$string_csv .= "\r\n";	
